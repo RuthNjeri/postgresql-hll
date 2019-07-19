@@ -24,7 +24,7 @@ PG_CPPFLAGS = -fPIC -Wall -Wextra -Werror -Wno-unused-parameter -Wno-implicit-fa
 
 REGRESS = setup $(filter-out setup,$(patsubst sql/%.sql,%,$(sort $(wildcard sql/*.sql))))
 
-PG_CONFIG ?= pg_config
+PG_CONFIG ?= PG_CONFIG=/usr/bin/pg_config
 PGXS = $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 
